@@ -1,0 +1,438 @@
+@import '_mixin', '_reset', '_keyframes';
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,700i&display=swap&subset=cyrillic');
+
+@font-face {
+    font-family: 'Nexa Book';
+    src: url('../../build/fonts/NEXA/Nexa-Book.eot');
+    src: local('Nexa Book'), local('Nexa-Book'),
+        url('../../build/fonts/NEXA/Nexa-Book.eot?#iefix') format('embedded-opentype'),
+        url('../../build/fonts/NEXA/Nexa-Book.woff') format('woff'),
+        url('../../build/fonts/NEXA/Nexa-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nexa';
+    src: url('../../build/fonts/NEXA/NexaBlack.eot');
+    src: local('Nexa Black'), local('NexaBlack'),
+        url('../../build/fonts/NEXA/NexaBlack.eot?#iefix') format('embedded-opentype'),
+        url('../../build/fonts/NEXA/NexaBlack.woff') format('woff'),
+        url('../../build/fonts/NEXA/NexaBlack.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nexa';
+    src: url('../../build/fonts/NEXA/Nexa-Bold.eot');
+    src: local('Nexa Bold'), local('Nexa-Bold'),
+        url('../../build/fonts/NEXA/Nexa-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../../build/fonts/NEXA/Nexa-Bold.woff') format('woff'),
+        url('../../build/fonts/NEXA/Nexa-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Nexa';
+    background: #F1F1F1;
+
+}
+
+
+
+
+/******************HEADER********************/
+header {
+    width: 942px;
+    margin: 0 auto;
+
+    .header {
+        @include wrapper();
+        padding-top: 15px;
+
+        .logo {
+            width: 25%;
+            padding-left: 56px;
+
+            h1 {
+                font-size: 39px;
+                line-height: 32px;
+                color: #6017a3;
+                font-weight: 800;
+                position: relative;
+
+                a {
+                    color: #6017a3;
+                }
+
+                :before {
+                    display: inline-block;
+                    content: "";
+                    position: absolute;
+                    left: -56px;
+                    width: 55px;
+                    height: 56px;
+                    background: url('../../build/img/Logo.png') no-repeat;
+                }
+            }
+
+            p {
+                font-size: 12px;
+                line-height: 30px;
+                color: #7d7d7d;
+                font-family: 'Open Sans',
+                    sans-serif;
+                font-weight: 400;
+                font-style: italic;
+                ;
+            }
+        }
+
+        .dropdown {
+            width: 40%;
+            display: inline-flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            position: relative;
+
+
+            span,
+            .dropbtn {
+                font-size: 12px;
+                color: #58159b;
+                font-family: "Nexa";
+                font-weight: bold;
+                cursor: pointer;
+                border: none;
+                padding-bottom: 10px;
+
+            }
+
+            span {
+                padding-right: 15px;
+                margin-right: 15px;
+
+                a {
+                    color: #6017a3;
+                    padding-right: 5px;
+                    ;
+                }
+
+            }
+
+            .dropbtn {
+                position: relative;
+                margin-right: 10px;
+                padding-right: 10px;
+
+                .dropdown-content {
+                    opacity: 0;
+                    position: absolute;
+                    top: 20px;
+                    right: 5px;
+                    background-color: #f9f9f9;
+                    min-width: 150px;
+                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                    z-index: -1;
+
+                    a {
+                        color: black;
+                        padding: 12px 16px;
+                        text-decoration: none;
+                        display: block;
+
+                        :hover {
+                            background-color: #f1f1f1
+                        }
+
+                    }
+                }
+
+            }
+
+            .dropbtn:hover .dropdown-content {
+                animation: drop 1s;
+                opacity: 1;
+                z-index: 1;
+            }
+
+        }
+
+
+        form {
+            width: 35%;
+            display: inline-flex;
+            justify-content: flex-end;
+
+
+            input {
+                margin-top: 5%;
+                padding: 6% 0% 2% 10%;
+                border: 1px solid transparent;
+                border-right: none;
+                background: #fff;
+
+
+            }
+
+            button {
+                margin-top: 5%;
+                background: #fff;
+                border: none;
+                width: 50px;
+
+                i {
+                    color: #6017a3;
+                    margin-top: 14px;
+                    font-size: 20px;
+                }
+            }
+
+        }
+    }
+
+    nav {
+        ul {
+            width: 100%;
+            margin-top: 34px;
+            display: flex;
+            justify-content: space-between;
+
+            li {
+                width: 19%;
+                text-align: center;
+                font-size: 17px;
+                line-height: 41px;
+                font-family: 'Open Sans';
+                font-weight: 700;
+                position: relative;
+                background: #fff;
+                padding: 59px 0 0;
+                border: #f1f1f1 solid 1px;
+
+                a {
+                    color: #707070;
+                    padding: 69px 23px 10px;
+
+                    i:before {
+                        position: absolute;
+                        top: 20px;
+                        left: 43%;
+                        font-size: 26px;
+                    }
+
+                }
+
+                a:hover {
+                    color: #6017a3;
+                }
+
+            }
+
+            li+li {
+                a {
+                    padding: 69px 42px 10px 43px;
+                    ;
+                }
+            }
+
+            li+li+li+li {
+                a {
+                    padding: 69px 40px 10px;
+                }
+            }
+
+            li:hover {
+                transform: scale(1.1);
+                z-index: 5;
+            }
+
+            li:hover:after {
+                animation: nav-border 0.5s forwards;
+            }
+
+            li:after {
+                display: block;
+                content: "";
+                border-bottom: 8px solid #701dbb;
+                transform: scale(0);
+                margin-bottom: -3px;
+            }
+        }
+
+    }
+}
+
+/***********main>baner*************/
+
+main {
+
+    .baner {
+
+        background: url(../../build/img/baner.jpg) 0 0px no-repeat;
+        background-size: cover;
+
+        position: relative;
+    }
+
+    .baner:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background: rgba(29, 15, 49, 0.5);
+        width: 100%;
+        height: 100%;
+    }
+
+    .baner_text {
+        width: 942px;
+        margin: 0 auto;
+
+        p,
+        h2 {
+            position: relative;
+            font-size: 40px;
+            letter-spacing: 0px;
+            line-height: 47px;
+            color: #ffffff;
+            font-family: "Nexa";
+            font-weight: bold;
+            text-align: center;
+            padding-top: 170px;
+        }
+
+        p+p {
+            padding: 0;
+        }
+
+        h2 {
+            font-size: 20px;
+            padding: 0 0 100px;
+            position: relative;
+        }
+
+        h2:before {
+            content: "";
+            position: absolute;
+            top: -130px;
+            left: 400px;
+            width: 139px;
+            height: 139px;
+            background: #451A4A;
+            border-radius: 50%;
+
+        }
+
+        h2:after {
+            content: "";
+            position: absolute;
+            top: -92px;
+            left: 438px;
+            width: 58px;
+            height: 60px;
+            background: url("../../build/img/geo.png") no-repeat;
+        }
+    }
+
+    .container__gray {
+        background: #2d2d2d;
+
+        .container_block {
+            width: 942px;
+            margin: 0 auto;
+
+            h3 {
+                text-align: center;
+                font-size: 36px;
+                color: #fff;
+                font-family: "Nexa";
+                padding: 25px 0 10px;
+            }
+
+            p {
+                font-size: 14px;
+                letter-spacing: 0px;
+                line-height: 22px;
+                color: #a161db;
+                font-family: "Nexa";
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .container_img {
+                position: relative;
+                margin-top: 30px;
+
+                img {
+                    position: relative;
+                    top: 0;
+                    left: 118px;
+                    z-index: 10;
+                }
+
+                img+img {
+                    position: absolute;
+                    top: 0;
+                    left: -3px;
+                    z-index: 0;
+                }
+
+                img+img+img {
+                    position: absolute;
+                    top: 0;
+                    left: -3px;
+                }
+            }
+
+            .container_img:before {
+                content: "";
+                position: absolute;
+                z-index: 15;
+                top: 0;
+                left: 550px;
+                width: 47px;
+                height: 71px;
+                background: url('../../build/img/geo-map.svg') no-repeat;
+            }
+
+            .block_article {
+                display: flex;
+                justify-content: space-between;
+                color: #fff;
+                padding-top: 100px;
+
+                article {
+                    width: 32%;
+                    position: relative;
+
+                    h4 {
+                        font-family: "Nexa";
+                        font-size: 24px;
+                    }
+
+                    p {
+                        font-size: 12px;
+                        letter-spacing: 0px;
+                        line-height: 22px;
+                        color: #fff;
+                        text-align: left;
+                    }
+                }
+
+                article:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 50px;
+                }
+            }
+        }
+
+    }
+
+}
